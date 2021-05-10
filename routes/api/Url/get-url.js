@@ -10,7 +10,7 @@ Route.get(
             let args = { url_identifier: shortUrl };
             let urlData = await db.findUrl(args);
             if (urlData === null)
-                return res.status(200).send({
+                return res.status(404).send({
                     message: 'URL does not exist or has been deleted'
                 });
             return res.redirect(urlData.original_url);

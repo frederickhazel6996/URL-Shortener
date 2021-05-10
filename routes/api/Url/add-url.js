@@ -37,7 +37,7 @@ Route.post(
 
             await db.addUrl(args);
             let shortUrl = `${process.env.BASE_URL}${urlIdentifier}`;
-            return res.status(201).send({ url: shortUrl });
+            return res.status(201).send({ url: shortUrl, urlIdentifier });
         } catch (e) {
             return res.status(500);
         }

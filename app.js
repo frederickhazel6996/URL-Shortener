@@ -41,7 +41,7 @@ if (process.env.NODE_ENV === 'development') {
     app.use(express.static(path.join(__dirname, 'public')));
 }
 
-startMongo();
+const mongoConnection = startMongo();
 
 //############# catch 404 and forward to error handler###########
 app.use(function (req, res, next) {
@@ -61,3 +61,4 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
+module.exports.mongoConnection = mongoConnection;

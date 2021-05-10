@@ -8,7 +8,8 @@
         "heroku-postbuild": "cd client && npm install && npm run build",
         "client": "cd client && npm start",
         "server": "nodemon ./bin/www",
-        "test": "NODE_ENV=testing jest --runInBand --silent --coverage --forceExit  --detectOpenHandles"
+        "production-test": "NODE_ENV=testing jest --runInBand --silent --coverage --forceExit  --detectOpenHandles",
+        "test": "NODE_ENV=testing jest --runInBand --silent --forceExit  --detectOpenHandles"
     },
     "jest": {
         "testEnvironment": "node"
