@@ -6,3 +6,51 @@
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+
+.display__mobile {
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
+
+.old__links__box {
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #e2e8f0;
+  overflow-y: scroll;
+}
+
+#link__box__scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Handle */
+#link__box__scroll::-webkit-scrollbar-thumb {
+  background: #ff6347 !important;
+}
+
+/* Handle on hover */
+#link__box__scroll::-webkit-scrollbar-thumb:hover {
+  background: #ff6347 !important;
+}
+
+.custom__alert {
+  background: #ffcec5 !important;
+}
+
+.btn-outline {
+  background-color: white;
+  border-color: #ff6347 !important;
+  color: #ff6347 !important;
+
+  &:hover {
+    background-color: #ff6347;
+    color: white !important;
+
+    .doctor-icon {
+      color: white !important;
+    }
+  }
+}
