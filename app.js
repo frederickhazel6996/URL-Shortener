@@ -22,7 +22,7 @@ let {
 
 startUtility(app);
 startRateLimiter(app);
-startCSRF(app);
+
 //#################SETTING UP GLOBALS######################
 
 global.dbService = require('./routes/services/db');
