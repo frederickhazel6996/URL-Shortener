@@ -14,7 +14,6 @@ app.use(cors());
 
 let {
     startMongo,
-    startCSRF,
     startRateLimiter,
     developmentMode,
     startUtility
