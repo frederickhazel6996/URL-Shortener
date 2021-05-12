@@ -16,13 +16,16 @@ $grayColor: #e2e8f0;
     display: none;
   }
 }
-
+.old__links__item {
+  background-color: transparent !important;
+}
 .old__links__box {
+  background-color: transparent !important;
   width: 100%;
   height: 200px;
   background-color: white;
   border-radius: 5px;
-  border: 1px solid $grayColor;
+  border: 0.5px solid $grayColor;
   overflow-y: scroll;
 }
 

@@ -51,7 +51,7 @@ const Home = () => {
   };
 
   let recentURLList = urls.map((urls, index) => (
-    <ListGroup.Item key={index}>
+    <ListGroup.Item key={index} className="old__links__item">
       <Text fontSize="lg" color="gray.500" width="100">
         {urls}
         <CopyToClipboard
