@@ -12,13 +12,12 @@ import {
 } from '@chakra-ui/react';
 import { Container, Row, Col, Alert, ListGroup } from 'react-bootstrap';
 import { ColorModeSwitcher } from '../../Config/ColorModeSwitcher';
+import { rocketImage as Rocket, notyf } from '../../Utils/values';
 import {
-  rocketImage as Rocket,
   setToLocalStorage,
   getFromLocalStorage,
   setBlankLocalStorage,
-  notyf,
-} from '../../values';
+} from '../../Utils/methods';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRocket, faPaste } from '@fortawesome/free-solid-svg-icons';
 import { useForm } from 'react-hook-form';
@@ -115,7 +114,7 @@ const Home = () => {
                       variant="outline"
                       type="submit"
                     >
-                      <span className="display__mobile">Munch Url</span>
+                      <span className="display__mobile">Blaze Url</span>
                     </Button>
                   </Col>
                 </Row>
@@ -158,7 +157,11 @@ const Home = () => {
 
           <footer>
             <Text fontSize="sm" color="gray.500" width="100">
-              &copy; <em id="date"></em> Meister Kwame
+              &copy;{' '}
+              <em id="date">
+                2021 Meister Kwame{' '}
+                <span className="ghana_flag">&#127468;&#127469;</span>
+              </em>
             </Text>
           </footer>
         </Grid>

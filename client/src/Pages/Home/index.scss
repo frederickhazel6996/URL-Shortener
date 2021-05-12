@@ -1,3 +1,7 @@
+$primaryColor: #ff6347;
+$secondaryColor: #ffcec5;
+$grayColor: #e2e8f0;
+
 .inline__text {
   background-color: transparent !important;
   font-size: 20px !important;
@@ -18,7 +22,7 @@
   height: 200px;
   background-color: white;
   border-radius: 5px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid $grayColor;
   overflow-y: scroll;
 }
 
@@ -28,25 +32,25 @@
 
 /* Handle */
 #link__box__scroll::-webkit-scrollbar-thumb {
-  background: #ff6347 !important;
+  background: $primaryColor !important;
 }
 
 /* Handle on hover */
 #link__box__scroll::-webkit-scrollbar-thumb:hover {
-  background: #ff6347 !important;
+  background: $primaryColor !important;
 }
 
 .custom__alert {
-  background: #ffcec5 !important;
+  background: $secondaryColor !important;
 }
 
 .btn-outline {
   background-color: white;
-  border-color: #ff6347 !important;
-  color: #ff6347 !important;
+  border-color: $primaryColor !important;
+  color: $primaryColor !important;
 
   &:hover {
-    background-color: #ff6347;
+    background-color: $primaryColor;
     color: white !important;
 
     .doctor-icon {

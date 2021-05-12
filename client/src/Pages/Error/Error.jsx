@@ -1,15 +1,4 @@
 import React from 'react';
-import {
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  SimpleGrid,
-} from '@chakra-ui/react';
-import { ColorModeSwitcher } from '../../Config/ColorModeSwitcher';
-import { Logo } from '../../Logo';
 import './index.scss';
 const Home = () => {
   return (
