@@ -1,0 +1,16 @@
+$primaryColor: #ff6347;
+$secondaryColor: #ffcec5;
+.socials__outline {
+  background-color: transparent !important;
+  border-color: $primaryColor !important;
+  color: $primaryColor !important;
+
+  &:hover {
+    background-color: $primaryColor !important;
+    color: white !important;
+
+    .doctor-icon {
+      color: white !important;
+    }
+  }
+}

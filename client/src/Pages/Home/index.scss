@@ -43,18 +43,3 @@ $grayColor: #e2e8f0;
 .custom__alert {
   background: $secondaryColor !important;
 }
-
-.btn-outline {
-  background-color: white;
-  border-color: $primaryColor !important;
-  color: $primaryColor !important;
-
-  &:hover {
-    background-color: $primaryColor;
-    color: white !important;
-
-    .doctor-icon {
-      color: white !important;
-    }
-  }
-}
