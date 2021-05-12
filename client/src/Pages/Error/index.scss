@@ -6,6 +6,7 @@ $red: #f01a19;
 $darkred: #ff6347;
 
 .rocket {
+  margin-top: 600px;
   position: absolute;
   top: 20%;
   width: 80px;
@@ -235,10 +236,10 @@ $darkred: #ff6347;
     transform: translate3d(0px, 0px, 0);
   }
   50% {
-    transform: translate3d(0px, -4px, 0);
+    transform: translate3d(0px, -200px, 0);
   }
   100% {
-    transform: translate3d(0px, 0px, 0);
+    transform: translate3d(0px, -900px, 0);
   }
 }
 
