@@ -17,6 +17,7 @@ import {
   setToLocalStorage,
   getFromLocalStorage,
   setBlankLocalStorage,
+  urlShorterner,
 } from '../../Utils/methods';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRocket, faPaste } from '@fortawesome/free-solid-svg-icons';
@@ -27,7 +28,7 @@ import SocialButtons from '../Components/Socials/Socials';
 import './index.scss';
 
 const Home = () => {
-  const [copiedLink, setcopiedLink] = useState('http://localhost:3000/asdasd');
+  const [copiedLink, setcopiedLink] = useState(null);
   const { register, handleSubmit } = useForm();
   const [urls, seturls] = useState([]);
 
@@ -40,33 +41,39 @@ const Home = () => {
     }
   }, []);
 
-  const submitHandler = data => {
+  const submitHandler = async data => {
+    const shortUrl = await urlShorterner(data.url);
+    if (shortUrl === 0) return;
+
+    console.log(shortUrl);
     if (urls.length >= 5) {
-      seturls([data.url]);
+      seturls([shortUrl]);
     } else {
-      seturls([...urls, data.url]);
+      seturls([...urls, shortUrl]);
     }
-    setcopiedLink(data.url);
-    setToLocalStorage(data.url);
+    setcopiedLink(shortUrl);
+    setToLocalStorage(shortUrl);
   };
 
-  let recentURLList = urls.map((urls, index) => (
-    <ListGroup.Item key={index} className="old__links__item">
-      <Text fontSize="lg" color="gray.500" width="100">
-        {urls}
-        <CopyToClipboard
-          text={urls}
-          onCopy={() => {
-            notyf.success('Copied To ClipBoard');
-          }}
-        >
-          <span className="ml-5">
-            <FontAwesomeIcon icon={faPaste} color="#ff6347" />
-          </span>
-        </CopyToClipboard>
-      </Text>
-    </ListGroup.Item>
-  ));
+  let recentURLList = urls
+    .map((urls, index) => (
+      <ListGroup.Item key={index} className="old__links__item">
+        <Text fontSize="lg" color="gray.500" width="100">
+          {urls}
+          <CopyToClipboard
+            text={urls}
+            onCopy={() => {
+              notyf.success('Copied To ClipBoard');
+            }}
+          >
+            <span className="ml-5">
+              <FontAwesomeIcon icon={faPaste} color="#ff6347" />
+            </span>
+          </CopyToClipboard>
+        </Text>
+      </ListGroup.Item>
+    ))
+    .reverse();
   return (
     <>
       <Box textAlign="center" fontSize="xl">
@@ -123,9 +130,7 @@ const Home = () => {
                 <>
                   <br />
                   <Alert variant="danger custom__alert">
-                    <span id="link__generated">
-                      http://localhost:3000/asdasd
-                    </span>
+                    <span id="link__generated">{copiedLink}</span>
 
                     <CopyToClipboard
                       text={copiedLink}

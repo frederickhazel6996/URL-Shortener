@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { notyf } from './values';
+const URL = '/api/url/add-url';
 const URL_LENGTH = 5;
 export const setToLocalStorage = url => {
   let recentURLs = JSON.parse(localStorage.getItem('urls'));
@@ -21,4 +24,29 @@ export const setBlankLocalStorage = () => {
 
 export const getFromLocalStorage = () => {
   return JSON.parse(localStorage.getItem('urls'));
+};
+
+export const urlShorterner = async longUrl => {
+  try {
+    const response = await axios.post(
+      URL,
+      { url: longUrl },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    return response.data.url;
+  } catch (error) {
+    if (error.response.status === 500) {
+      notyf.error('Check Internet');
+    } else {
+      notyf.error('Check Internet');
+    }
+
+    console.log(error);
+    return 0;
+  }
 };
