@@ -2,6 +2,8 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 
 export const rocketImage = require('../Assets/Images/rocket.svg').default;
+export const rocketImageIco =
+  require('../Assets/Images/rocket_ico.svg').default;
 
 export const dummyURLs = [
   'http://localhost:3000/asdasd',
