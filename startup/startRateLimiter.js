@@ -3,7 +3,7 @@ module.exports = app => {
     //#################RATE LIMITING######################
     const limiter = rateLimit({
         windowMs: 1 * 60 * 1000, // 1 minute
-        max: 50
+        max: 5000
     });
 
     app.use(limiter);

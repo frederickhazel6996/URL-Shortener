@@ -17,6 +17,7 @@ Route.post(
             }
             const db = dbService;
             let { url } = req.body;
+
             let foundIdentifier = true;
             let urlIdentifier;
             while (foundIdentifier) {
@@ -24,13 +25,15 @@ Route.post(
                 foundIdentifier = await db.findUrl({
                     url_identifier: urlIdentifier
                 });
-                console.log(foundIdentifier);
+
                 if (foundIdentifier === null) {
                     foundIdentifier = false;
                 }
             }
+            let validUrl = getValidUrl(url);
+
             let args = {
-                original_url: url,
+                original_url: validUrl,
                 url_identifier: urlIdentifier,
                 date_created: moment().format('MMMM Do YYYY')
             };
@@ -43,5 +46,18 @@ Route.post(
         }
     }
 );
+
+const getValidUrl = rawUrl => {
+    let validUrl = rawUrl.trim().replace(/\s/g, '');
+
+    if (/^(:\/\/)/.test(validUrl)) {
+        return `http${validUrl}`;
+    }
+    if (!/^(f|ht)tps?:\/\//i.test(validUrl)) {
+        return `http://${validUrl}`;
+    }
+
+    return validUrl;
+};
 
 module.exports = Route;

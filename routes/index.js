@@ -1,6 +1,5 @@
 let express = require('express');
 const app = express();
-
 const { query, param } = require('express-validator');
 
 app.use(express.json());
@@ -20,10 +19,12 @@ app.get(
             let { short_url: shortUrl } = req.params;
             let args = { url_identifier: shortUrl };
             let urlData = await db.findUrl(args);
+
             if (urlData === null)
                 return res.status(200).send({
                     message: 'URL does not exist or has been deleted'
                 });
+
             return res.redirect(urlData.original_url);
         } catch (e) {
             return res.status(500);
