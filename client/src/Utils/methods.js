@@ -40,10 +40,10 @@ export const urlShorterner = async longUrl => {
 
     return response.data.url;
   } catch (error) {
-    if (error.response.status === 500) {
-      notyf.error('Check Internet');
+    if (error.response.status === 422) {
+      notyf.error('Invalid URL');
     } else {
-      notyf.error('Check Internet');
+      notyf.error('No Internet');
     }
 
     console.log(error);

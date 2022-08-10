@@ -11,15 +11,15 @@ export default function Socials() {
           className="btn socials__outline btn-social  mx-1"
           href="https://github.com/frederickhazel6996/URL-Shortener"
         >
-          <i className="fab fa-fw fa-github doctor-icon"></i>
+          <i className="fab fa-fw fa-github social-icon"></i>
         </a>
         <a
           target="_blank"
           rel="noreferrer"
           className="btn socials__outline btn-social  mx-1"
-          href="https://twitter.com/meister_kwame"
+          href="https://www.linkedin.com/in/frederick-sagoe-753856182/"
         >
-          <i className="fab fa-fw fa-twitter doctor-icon"></i>
+          <i className="fab fa-fw fa-linkedin social-icon"></i>
         </a>
       </div>
     </>

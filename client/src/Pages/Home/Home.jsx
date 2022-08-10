@@ -67,7 +67,11 @@ const Home = () => {
             }}
           >
             <span className="ml-5">
-              <FontAwesomeIcon icon={faPaste} color="#ff6347" />
+              <FontAwesomeIcon
+                icon={faPaste}
+                color="#ff6347"
+                className="copy-icon"
+              />
             </span>
           </CopyToClipboard>
         </Text>
@@ -139,7 +143,7 @@ const Home = () => {
                       }}
                     >
                       <span className="ml-5">
-                        <FontAwesomeIcon icon={faPaste} />
+                        <FontAwesomeIcon icon={faPaste} className="copy-icon" />
                       </span>
                     </CopyToClipboard>
                   </Alert>
@@ -162,11 +166,7 @@ const Home = () => {
 
           <footer>
             <Text fontSize="sm" color="gray.500" width="100">
-              &copy;{' '}
-              <em id="date">
-                2022 Meister Kwame{' '}
-                <span className="ghana_flag">&#127468;&#127469;</span>
-              </em>
+              &copy; <em id="date">2022 Frederick Hazel </em>
             </Text>
           </footer>
         </Grid>
