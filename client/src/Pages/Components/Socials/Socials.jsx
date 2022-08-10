@@ -5,14 +5,14 @@ export default function Socials() {
   return (
     <>
       <div className="mt text-left">
-        <a
+        {/* <a
           target="_blank"
           rel="noreferrer"
           className="btn socials__outline btn-social  mx-1"
           href="https://github.com/frederickhazel6996/URL-Shortener"
         >
-          <i className="fab fa-fw fa-github social-icon"></i>
-        </a>
+          <i className="fas fa-fw fa-user-astronaut social-icon"></i>
+        </a> */}
         <a
           target="_blank"
           rel="noreferrer"
