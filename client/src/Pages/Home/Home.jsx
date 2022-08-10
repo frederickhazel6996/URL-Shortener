@@ -164,7 +164,7 @@ const Home = () => {
             <Text fontSize="sm" color="gray.500" width="100">
               &copy;{' '}
               <em id="date">
-                2021 Meister Kwame{' '}
+                2022 Meister Kwame{' '}
                 <span className="ghana_flag">&#127468;&#127469;</span>
               </em>
             </Text>

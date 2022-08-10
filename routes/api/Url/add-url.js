@@ -1,7 +1,6 @@
 let Route = require('express').Router();
 let { validationResult } = require('express-validator');
 let spawn = require('spawn-password');
-let authentication = require('../../services/middlewares/jwt');
 let validator = require('./urlValidators');
 let moment = require('moment');
 
